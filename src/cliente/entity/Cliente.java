@@ -1,6 +1,6 @@
 package cliente.entity;
 
-public class Cliente {
+public class cliente {
 	private int codCliente;
 	private int DNIcliente;
 	private String nombreCliente;
@@ -8,7 +8,7 @@ public class Cliente {
 	private int telefono;
 	
 	
-	public Cliente(int codCliente, int dNIcliente, String nombreCliente, String direccion, int telefono) {
+	public cliente(int codCliente, int dNIcliente, String nombreCliente, String direccion, int telefono) {
 		super();
 		this.codCliente = codCliente;
 		DNIcliente = dNIcliente;
