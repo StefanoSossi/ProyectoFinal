@@ -1,18 +1,18 @@
 package cliente.control;
 
-import cliente.entity.cliente;
+import cliente.entity.Cliente;
 
 public class clientes {
-			private cliente[] clientes;
+			private Cliente[] clientes;
 		private int cantidad;
 		private int ultimo;
 		
 		public clientes (int tamaño) {
-			clientes = new cliente[tamaño];
+			clientes = new Cliente[tamaño];
 			cantidad = 0;
 			ultimo = -1;
 		}
-		public void ingresar(cliente cliente) throws java.lang.ArrayIndexOutOfBoundsException {
+		public void ingresar(Cliente cliente) throws java.lang.ArrayIndexOutOfBoundsException {
 				clientes[++ultimo]=cliente;
 				cantidad++;
 		}
@@ -47,7 +47,7 @@ public class clientes {
 		}
 		
 		
-		public cliente[] getClientes() {
+		public Cliente[] getClientes() {
 			return clientes;
 		}
 		public int getCantidad() {
