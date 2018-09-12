@@ -3,6 +3,7 @@ package venta.view;
 import java.util.Scanner;
 
 import excepcionesInputTypes.InputTypes;
+import excepcionesInputTypes.clienteFantasma;
 import excepcionesInputTypes.ventaFantasma;
 
 public class ventaMenu {
@@ -33,7 +34,11 @@ public class ventaMenu {
 						salir = true;
 						break;
 					case 1:
-						ventaView.addVenta();
+						try {
+							ventaView.addVenta();
+						} catch (clienteFantasma e1) {
+							System.out.println("No existe el cliente");
+						}
 						break;
 					case 2:
 						ventaView.listVenta();

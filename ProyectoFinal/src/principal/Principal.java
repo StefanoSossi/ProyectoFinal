@@ -34,8 +34,8 @@ public class Principal {
 	  clienteView clienteView = new clienteView(clientes, scanner);
 	  empleadoView empleadoView = new empleadoView(empleados, scanner);
 	  proveedorView proveedorView = new proveedorView(proveedor, scanner);
-	  ventaView ventaView = new ventaView(ventas, scanner);
-	  detVentaView detVentaView = new detVentaView(detVentas, scanner);
+	  ventaView ventaView = new ventaView(ventas, clientes, scanner);
+	  detVentaView detVentaView = new detVentaView(detVentas, empleados, ventas, autos, scanner);
 	  compraView compraView = new compraView(compras, scanner);
 	  autoView autoView = new autoView(autos, scanner);
 	  

@@ -1,25 +1,27 @@
 package venta.view;
 import java.util.Scanner;
 
+import cliente.control.clientes;
 import venta.control.ventas;
 import venta.entity.venta;
 import excepcionesInputTypes.InputTypes;
+import excepcionesInputTypes.clienteFantasma;
 import excepcionesInputTypes.ventaFantasma;
 public class ventaView {
 		private ventas ventas;
 		private Scanner scanner;
-		
-		public ventaView(ventas ventas,Scanner scanner) {
+		private clientes clientes;
+		public ventaView(ventas ventas, clientes clientes ,Scanner scanner) {
 			
 			this.ventas = ventas;
 			
 			this.scanner = scanner;
 		}
 		
-		public void addVenta() {
+		public void addVenta() throws clienteFantasma {
 			venta venta;
 			
-			venta = ventaRegistro.ingresar(scanner);
+			venta = ventaRegistro.ingresar(scanner,clientes);
 			ventas.ingresar(venta);
 					
 		}

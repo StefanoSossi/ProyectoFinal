@@ -3,7 +3,10 @@ package DetVenta.view;
 import java.util.Scanner;
 
 import excepcionesInputTypes.InputTypes;
+import excepcionesInputTypes.clienteFantasma;
 import excepcionesInputTypes.detVentaFantasma;
+import excepcionesInputTypes.empleadoFantasma;
+import excepcionesInputTypes.ventaFantasma;
 
 public class detVentaMenu {
 			private static int encabezado (Scanner scanner) {
@@ -33,7 +36,16 @@ public class detVentaMenu {
 						salir = true;
 						break;
 					case 1:
-						detVentaView.addDetVenta();
+						try {
+							detVentaView.addDetVenta();
+						
+						} catch (empleadoFantasma e1) {
+							System.out.println("No existe el cliente");
+						} catch (autoFantasma e2){
+							System.out.println("No existe el automovil");
+						} catch (ventaFantasma e3){
+							System.out.println("No existe la venta");
+						}
 						break;
 					case 2:
 						detVentaView.listDetVenta();
