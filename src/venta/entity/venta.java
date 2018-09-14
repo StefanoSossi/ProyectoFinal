@@ -2,13 +2,21 @@ package venta.entity;
 
 public class venta {
 	private int codigoVenta;
+	private int codigoCliente;
 	private int numeroVenta;
 	private String reservacion;
-	public venta(int codigoVenta, int numeroVenta, String reservacion) {
+	public venta(int codigoVenta, int numeroVenta, String reservacion, int codigoCliente) {
 		super();
 		this.codigoVenta = codigoVenta;
 		this.numeroVenta = numeroVenta;
 		this.reservacion = reservacion;
+		this.codigoCliente = codigoCliente;
+	}
+	public int getCodigoCliente() {
+		return codigoCliente;
+	}
+	public void setCodigoCliente(int codigoCliente) {
+		this.codigoCliente = codigoCliente;
 	}
 	public int getCodigoVenta() {
 		return codigoVenta;
@@ -30,8 +38,8 @@ public class venta {
 	}
 	@Override
 	public String toString() {
-		return "venta [codigoVenta=" + codigoVenta + ", numeroVenta=" + numeroVenta + ", reservacion=" + reservacion
-				+ "]";
+		return "venta [codigoVenta=" + codigoVenta + ", codigoCliente=" + codigoCliente + ", numeroVenta=" + numeroVenta
+				+ ", reservacion=" + reservacion + "]";
 	}
 	
 

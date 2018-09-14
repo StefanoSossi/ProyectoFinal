@@ -1,6 +1,7 @@
 package cliente.control;
 
 import cliente.entity.Cliente;
+import excepcionesInputTypes.clienteFantasma;
 
 public class clientes {
 			private Cliente[] clientes;
@@ -16,7 +17,7 @@ public class clientes {
 				clientes[++ultimo]=cliente;
 				cantidad++;
 		}
-		public void eliminar(int codCliente) {
+		public void eliminar(int codCliente) throws clienteFantasma {
 			int indice = buscar(codCliente);
 			if(indice>=0) {
 				if(indice!=ultimo) {
@@ -29,7 +30,7 @@ public class clientes {
 			}
 			
 		}
-		public int buscar(int codCliente) {
+		public int buscar(int codCliente) throws clienteFantasma {
 			int posicion = -1;
 			
 			int indice=0;
@@ -40,10 +41,19 @@ public class clientes {
 				}
 				indice++;
 			}
-		//	if (posicion==-1){
-		//		throw new Fantasma();
-			//}
+			if (posicion==-1){
+			throw new clienteFantasma();
+			}
 			return posicion;
+		}
+		public void buscarClientes(int codCliente){
+			int indice=0;
+			while(indice<=ultimo) {
+				if(clientes[indice].getCodCliente()==codCliente) {
+				System.out.println(clientes[indice].toString());
+				}
+				indice++;
+			}
 		}
 		
 		
